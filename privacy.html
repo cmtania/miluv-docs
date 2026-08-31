@@ -1,0 +1,324 @@
+<title>MiLuv Privacy Policy</title>
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #FCFBF9;
+    --surface: #FFFFFF;
+    --ink: #23201C;
+    --ink-soft: #5C574F;
+    --ink-faint: #8B8478;
+    --rule: #E8E3DB;
+    --rule-strong: #D9D2C6;
+    --accent: #2C8F76;
+    --accent-deep: #1D6A57;
+    --accent-wash: #EBF3EF;
+
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+
+    --measure: 68ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16150F;
+      --surface: #1E1D16;
+      --ink: #ECE7DD;
+      --ink-soft: #ABA395;
+      --ink-faint: #7C7568;
+      --rule: #322F26;
+      --rule-strong: #433F33;
+      --accent: #52C2A4;
+      --accent-deep: #74D2B9;
+      --accent-wash: #1B2C27;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #16150F;
+    --surface: #1E1D16;
+    --ink: #ECE7DD;
+    --ink-soft: #ABA395;
+    --ink-faint: #7C7568;
+    --rule: #322F26;
+    --rule-strong: #433F33;
+    --accent: #52C2A4;
+    --accent-deep: #74D2B9;
+    --accent-wash: #1B2C27;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-wash); }
+
+  .wrap { max-width: var(--measure); margin: 0 auto; padding: 0 24px 120px; }
+
+  header {
+    padding: 72px 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .kicker {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent-deep);
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.1rem, 6vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .updated { color: var(--ink-faint); font-size: 0.9rem; margin: 0; }
+
+  .summary {
+    margin: 32px 0 8px;
+    padding: 22px 24px;
+    background: var(--accent-wash);
+    border-radius: 12px;
+  }
+  .summary h2 { margin: 0 0 10px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-deep); font-family: var(--sans); font-weight: 600; }
+  .summary ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
+  .summary li { color: var(--ink-soft); font-size: 0.96rem; }
+  .summary strong { color: var(--ink); font-weight: 600; }
+
+  nav.toc {
+    margin: 40px 0 8px;
+    font-size: 0.92rem;
+  }
+  nav.toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; columns: 2; column-gap: 32px; }
+  nav.toc li { counter-increment: toc; padding: 4px 0; break-inside: avoid; }
+  nav.toc li::before { content: counter(toc) ". "; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  nav.toc a { color: var(--ink-soft); text-decoration: none; }
+  nav.toc a:hover { color: var(--accent-deep); }
+  @media (max-width: 560px) { nav.toc ol { columns: 1; } }
+
+  section { padding: 40px 0 4px; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: 0; }
+  h2.sec {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    display: flex;
+    gap: 14px;
+    text-wrap: balance;
+  }
+  h2.sec .n { color: var(--accent); font-size: 1rem; font-variant-numeric: tabular-nums; padding-top: 0.25em; flex: none; }
+  h3 { font-size: 1rem; font-weight: 600; margin: 24px 0 4px; color: var(--ink); }
+  p { margin: 14px 0; }
+  section > p:first-of-type, section > .body > p:first-of-type { margin-top: 12px; }
+  .body { margin-left: 28px; }
+  @media (max-width: 560px) { .body { margin-left: 0; } }
+
+  a { color: var(--accent-deep); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  ul.plain { margin: 12px 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+  ul.plain li { padding-left: 2px; }
+  ul.plain strong { font-weight: 600; }
+
+  .tbl-wrap { overflow-x: auto; margin: 16px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-faint); font-weight: 600; border-bottom: 1px solid var(--rule-strong); }
+  td:last-child, th:last-child { color: var(--ink-soft); }
+
+  .keyline {
+    margin: 20px 0;
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 0.96rem;
+  }
+  .keyline strong { color: var(--accent-deep); }
+
+  footer { padding: 44px 0 0; color: var(--ink-faint); font-size: 0.85rem; }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">MiLuv</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated 1 September 2026</p>
+  </header>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <ul>
+      <li>MiLuv exists to show <strong>you and one partner</strong> how far apart you are.</li>
+      <li>Your partner only ever sees the <strong>distance and a timestamp</strong> — never your location.</li>
+      <li>Only your <strong>latest position</strong> is stored, and it's overwritten every update.</li>
+      <li>No ads, no analytics SDKs, <strong>no tracking</strong> across other apps or sites. Your data is never sold.</li>
+      <li>You can turn off location, unlink, or <strong>delete your account and all data</strong> from inside the app at any time.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <ol>
+      <li><a href="#who">Who this is from</a></li>
+      <li><a href="#collect">What MiLuv collects</a></li>
+      <li><a href="#partner">What your partner can see</a></li>
+      <li><a href="#use">How the data is used</a></li>
+      <li><a href="#processors">Who stores &amp; processes it</a></li>
+      <li><a href="#retention">How long it's kept</a></li>
+      <li><a href="#choices">Your choices &amp; rights</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#international">Where data is processed</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="who">
+    <h2 class="sec"><span class="n">1</span>Who this is from</h2>
+    <div class="body">
+      <p>MiLuv is an iOS app built and operated by an individual developer (“I”, “me”). This policy explains what the app does with your information. It applies to the MiLuv iOS app and nothing else.</p>
+      <p>If you don't agree with this policy, please don't create an account — and if you already have one, you can delete it from <strong>Settings → Delete account</strong>.</p>
+    </div>
+  </section>
+
+  <section id="collect">
+    <h2 class="sec"><span class="n">2</span>What MiLuv collects</h2>
+    <div class="body">
+      <h3>Account</h3>
+      <ul class="plain">
+        <li><strong>Email address</strong> — to identify your account and, if email confirmation is on, to verify it.</li>
+        <li><strong>Password</strong> — you set one; it's stored only as a salted hash by the authentication service. I never see it.</li>
+        <li><strong>Display name</strong> — the name you choose; visible to your connected partner.</li>
+        <li><strong>Partner nickname</strong> — optional; a private label for your partner, visible only to you.</li>
+      </ul>
+
+      <h3>Location</h3>
+      <p>When you grant location permission and either tap “Update my location” or allow background updates, the app sends your device's current <strong>latitude, longitude, and an accuracy value</strong> to the server. Only your single most recent position is stored — each update replaces the previous one. Your coordinates are readable only by you (enforced at the database level) and by the server process that computes distance.</p>
+
+      <h3>Notifications</h3>
+      <ul class="plain">
+        <li><strong>Push token</strong> — an identifier issued by Apple for your device, stored so the server can send you proximity alerts. It carries no personal information on its own.</li>
+      </ul>
+
+      <h3>Diagnostic data</h3>
+      <p>MiLuv contains <strong>no analytics or advertising software</strong> and does not track you across other apps or websites. Apple and the push-delivery provider (Expo) collect limited technical data — such as crash logs and whether a notification was delivered — as part of running their services. I may later add crash reporting (for example, Sentry) to fix bugs; if I do, it would collect information like device model, OS version, and error details — never your location or the contents of your account.</p>
+    </div>
+  </section>
+
+  <section id="partner">
+    <h2 class="sec"><span class="n">3</span>What your partner can see</h2>
+    <div class="body">
+      <div class="keyline"><strong>Your partner never sees where you are.</strong> They see the straight-line <strong>distance</strong> between the two of you and <strong>when it was last calculated</strong> — nothing more. Your coordinates are not shared with them, and there is no map, history, or trail.</div>
+      <p>They also see your <strong>display name</strong>. When you unlink, the shared distance is deleted for both of you.</p>
+    </div>
+  </section>
+
+  <section id="use">
+    <h2 class="sec"><span class="n">4</span>How the data is used</h2>
+    <div class="body">
+      <p>Your information is used only to make the app work:</p>
+      <ul class="plain">
+        <li>Your <strong>email and password</strong> sign you in.</li>
+        <li>Your <strong>latest position</strong> and your partner's are used to calculate the distance between you, which is then shown on the home screen and the widget.</li>
+        <li>That distance triggers a <strong>notification</strong> when you cross 1&nbsp;km, 500&nbsp;m, or arrive — sent to your device using your push token.</li>
+      </ul>
+      <p>I do not use your data for advertising, profiling, or any purpose beyond running MiLuv, and I do not sell or rent it to anyone.</p>
+    </div>
+  </section>
+
+  <section id="processors">
+    <h2 class="sec"><span class="n">5</span>Who stores &amp; processes it</h2>
+    <div class="body">
+      <p>MiLuv relies on a small number of service providers who process data on my behalf:</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Provider</th><th>Role</th><th>What it handles</th></tr></thead>
+          <tbody>
+            <tr><td>Supabase</td><td>Database, authentication, serverless functions</td><td>Your account, your latest position, the computed distance, your push token</td></tr>
+            <tr><td>Expo</td><td>Push notification delivery</td><td>Relays notifications and your push token to Apple</td></tr>
+            <tr><td>Apple</td><td>App distribution &amp; Apple Push Notification service</td><td>App download, notification delivery, standard device diagnostics</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Each provider has its own privacy terms and processes data only to provide its service.</p>
+    </div>
+  </section>
+
+  <section id="retention">
+    <h2 class="sec"><span class="n">6</span>How long it's kept</h2>
+    <div class="body">
+      <ul class="plain">
+        <li><strong>Account data</strong> (email, name, nickname) — kept until you delete your account.</li>
+        <li><strong>Location</strong> — only your most recent position exists at any time; it's overwritten on every update and <strong>deleted immediately</strong> when you unlink from your partner or delete your account.</li>
+        <li><strong>Computed distance</strong> — deleted when either of you unlinks or deletes their account.</li>
+        <li><strong>Push token</strong> — removed when you sign out on a device or delete your account.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="choices">
+    <h2 class="sec"><span class="n">7</span>Your choices &amp; rights</h2>
+    <div class="body">
+      <ul class="plain">
+        <li><strong>Turn off location</strong> — in iOS Settings, at any time. MiLuv still works; it just can't update the distance until you turn it back on.</li>
+        <li><strong>Unlink from your partner</strong> — in the app. This deletes both people's stored locations and the shared distance.</li>
+        <li><strong>Delete your account</strong> — Settings → Delete account. This permanently removes your account and all associated data, and ends your partner's connection.</li>
+        <li><strong>Ask what's held about you</strong>, or request deletion if you can't access the app — email me (below) and I'll respond within 30 days.</li>
+      </ul>
+      <p>Depending on where you live, you may have additional rights under laws such as the GDPR or CCPA — including access, correction, deletion, and the right to object. The controls above cover these; email me if you need anything else.</p>
+    </div>
+  </section>
+
+  <section id="security">
+    <h2 class="sec"><span class="n">8</span>Security</h2>
+    <div class="body">
+      <p>Data is encrypted in transit (HTTPS/TLS) and encrypted at rest by Supabase. Access to your location is restricted at the database level so that only you and the distance-calculating process can read it. No system is perfectly secure, but MiLuv is built to keep the amount of personal data it holds as small as possible.</p>
+    </div>
+  </section>
+
+  <section id="children">
+    <h2 class="sec"><span class="n">9</span>Children</h2>
+    <div class="body">
+      <p>MiLuv is not directed to children under 13 (or the minimum age required in your country), and I do not knowingly collect their personal information. If you believe a child has created an account, email me and I'll remove it.</p>
+    </div>
+  </section>
+
+  <section id="international">
+    <h2 class="sec"><span class="n">10</span>Where data is processed</h2>
+    <div class="body">
+      <p>MiLuv is operated from the Philippines. Your data is stored on Supabase infrastructure in the Southeast Asia region and may be processed by the providers listed in section&nbsp;5 in the regions where they operate. By using MiLuv you consent to this processing.</p>
+    </div>
+  </section>
+
+  <section id="changes">
+    <h2 class="sec"><span class="n">11</span>Changes to this policy</h2>
+    <div class="body">
+      <p>If this policy changes, I'll update the “last updated” date at the top. For material changes I'll also let you know in the app before they take effect.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="sec"><span class="n">12</span>Contact</h2>
+    <div class="body">
+      <p>Questions, requests, or concerns about your privacy:</p>
+      <p><a href="mailto:tania.dev.ph@gmail.com">tania.dev.ph@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>MiLuv · Privacy Policy · 1 September 2026</footer>
+</div>
