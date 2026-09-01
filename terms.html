@@ -1,0 +1,296 @@
+<title>MiLuv Terms of Service</title>
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #FCFBF9;
+    --surface: #FFFFFF;
+    --ink: #23201C;
+    --ink-soft: #5C574F;
+    --ink-faint: #8B8478;
+    --rule: #E8E3DB;
+    --rule-strong: #D9D2C6;
+    --accent: #2C8F76;
+    --accent-deep: #1D6A57;
+    --accent-wash: #EBF3EF;
+
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+
+    --measure: 68ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16150F;
+      --surface: #1E1D16;
+      --ink: #ECE7DD;
+      --ink-soft: #ABA395;
+      --ink-faint: #7C7568;
+      --rule: #322F26;
+      --rule-strong: #433F33;
+      --accent: #52C2A4;
+      --accent-deep: #74D2B9;
+      --accent-wash: #1B2C27;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #16150F;
+    --surface: #1E1D16;
+    --ink: #ECE7DD;
+    --ink-soft: #ABA395;
+    --ink-faint: #7C7568;
+    --rule: #322F26;
+    --rule-strong: #433F33;
+    --accent: #52C2A4;
+    --accent-deep: #74D2B9;
+    --accent-wash: #1B2C27;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-wash); }
+
+  .wrap { max-width: var(--measure); margin: 0 auto; padding: 0 24px 120px; }
+
+  header {
+    padding: 72px 0 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .kicker {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--accent-deep);
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.1rem, 6vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .updated { color: var(--ink-faint); font-size: 0.9rem; margin: 0; }
+
+  .summary {
+    margin: 32px 0 8px;
+    padding: 22px 24px;
+    background: var(--accent-wash);
+    border-radius: 12px;
+  }
+  .summary h2 { margin: 0 0 10px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-deep); font-family: var(--sans); font-weight: 600; }
+  .summary ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
+  .summary li { color: var(--ink-soft); font-size: 0.96rem; }
+  .summary strong { color: var(--ink); font-weight: 600; }
+
+  nav.toc { margin: 40px 0 8px; font-size: 0.92rem; }
+  nav.toc ol { margin: 0; padding: 0; list-style: none; counter-reset: toc; columns: 2; column-gap: 32px; }
+  nav.toc li { counter-increment: toc; padding: 4px 0; break-inside: avoid; }
+  nav.toc li::before { content: counter(toc) ". "; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  nav.toc a { color: var(--ink-soft); text-decoration: none; }
+  nav.toc a:hover { color: var(--accent-deep); }
+  @media (max-width: 560px) { nav.toc ol { columns: 1; } }
+
+  section { padding: 40px 0 4px; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: 0; }
+  h2.sec {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    display: flex;
+    gap: 14px;
+    text-wrap: balance;
+  }
+  h2.sec .n { color: var(--accent); font-size: 1rem; font-variant-numeric: tabular-nums; padding-top: 0.25em; flex: none; }
+  h3 { font-size: 1rem; font-weight: 600; margin: 24px 0 4px; color: var(--ink); }
+  p { margin: 14px 0; }
+  .body { margin-left: 28px; }
+  .body > p:first-of-type { margin-top: 12px; }
+  @media (max-width: 560px) { .body { margin-left: 0; } }
+
+  a { color: var(--accent-deep); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  ul.plain { margin: 12px 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+  ul.plain li { padding-left: 2px; }
+  ul.plain strong { font-weight: 600; }
+
+  .keyline {
+    margin: 20px 0;
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+    border-radius: 0 10px 10px 0;
+    font-size: 0.96rem;
+  }
+  .keyline strong { color: var(--accent-deep); }
+
+  footer { padding: 44px 0 0; color: var(--ink-faint); font-size: 0.85rem; }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">MiLuv</p>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated 1 September 2026</p>
+  </header>
+
+  <div class="summary">
+    <h2>The short version</h2>
+    <ul>
+      <li>MiLuv connects <strong>you and one partner</strong> and shows how far apart you are.</li>
+      <li>Only connect with someone who <strong>wants</strong> to share their distance with you.</li>
+      <li><strong>Never</strong> use MiLuv to monitor, follow, pressure, or harm anyone.</li>
+      <li>It's provided <strong>as is</strong> — the distance can be wrong or late, and it is <strong>not</strong> a safety or emergency tool.</li>
+      <li>You can delete your account anytime; I can close accounts that break these rules.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <ol>
+      <li><a href="#agree">Agreeing to these terms</a></li>
+      <li><a href="#eligibility">Who can use MiLuv</a></li>
+      <li><a href="#account">Your account</a></li>
+      <li><a href="#acceptable">Acceptable use</a></li>
+      <li><a href="#consent">Location &amp; consent</a></li>
+      <li><a href="#content">Your name &amp; content</a></li>
+      <li><a href="#payment">Payment</a></li>
+      <li><a href="#termination">Suspension &amp; termination</a></li>
+      <li><a href="#asis">No warranty</a></li>
+      <li><a href="#liability">Limitation of liability</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#law">Governing law</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="agree">
+    <h2 class="sec"><span class="n">1</span>Agreeing to these terms</h2>
+    <div class="body">
+      <p>MiLuv is an iOS app built and operated by an individual developer (“I”, “me”). These Terms of Service are a legal agreement between you and me. By creating an account or using the app, you accept them and the <a href="privacy.html">Privacy Policy</a>. If you don't agree, don't use MiLuv.</p>
+      <p>Your use of the App Store is also governed by Apple's terms.</p>
+    </div>
+  </section>
+
+  <section id="eligibility">
+    <h2 class="sec"><span class="n">2</span>Who can use MiLuv</h2>
+    <div class="body">
+      <p>You must be at least 13 years old, and old enough to form a binding contract where you live. Don't use MiLuv on behalf of anyone else without their knowledge and agreement.</p>
+    </div>
+  </section>
+
+  <section id="account">
+    <h2 class="sec"><span class="n">3</span>Your account</h2>
+    <div class="body">
+      <ul class="plain">
+        <li>Use a real email address and keep your password private. You're responsible for what happens under your account.</li>
+        <li>One account per person. Don't create accounts to impersonate someone or to get around a suspension.</li>
+        <li>Tell me promptly if you think someone else has accessed your account.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="acceptable">
+    <h2 class="sec"><span class="n">4</span>Acceptable use</h2>
+    <div class="body">
+      <div class="keyline"><strong>Zero tolerance for abuse.</strong> MiLuv exists for two people who both want to feel closer while apart. Using it to track, surveil, intimidate, control, or endanger another person is strictly prohibited and will get your account permanently closed.</div>
+      <p>You agree not to:</p>
+      <ul class="plain">
+        <li>Connect with, or try to connect with, anyone who has not freely chosen to share their distance with you — including through pressure, deception, or a shared device.</li>
+        <li>Use MiLuv to stalk, harass, threaten, or monitor a current or former partner, or anyone else.</li>
+        <li>Use an offensive, misleading, or impersonating display name.</li>
+        <li>Reverse-engineer, scrape, overload, probe, or interfere with the app or its servers, or try to access data that isn't yours.</li>
+        <li>Use MiLuv for anything unlawful, or in a way that could harm MiLuv or other people.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="consent">
+    <h2 class="sec"><span class="n">5</span>Location &amp; consent</h2>
+    <div class="body">
+      <p>MiLuv only shares a distance when <strong>both</strong> people have connected and each has chosen to share their location. Either of you can turn off location or unlink at any time, and the shared distance is then deleted for both.</p>
+      <div class="keyline"><strong>MiLuv is not a safety service.</strong> Do not rely on it for anyone's wellbeing, for navigation, or in an emergency. The distance is an estimate and may be inaccurate, delayed, or unavailable, and notifications are not guaranteed to arrive.</div>
+    </div>
+  </section>
+
+  <section id="content">
+    <h2 class="sec"><span class="n">6</span>Your name &amp; content</h2>
+    <div class="body">
+      <p>The only thing you provide that another person sees is your <strong>display name</strong>. By setting it, you give me permission to show it to your connected partner for as long as you're linked. You keep ownership of your name; you're responsible for it being appropriate.</p>
+      <p>I may remove a name or other content, or restrict an account, if it breaks section&nbsp;4 or is reported as abusive.</p>
+    </div>
+  </section>
+
+  <section id="payment">
+    <h2 class="sec"><span class="n">7</span>Payment</h2>
+    <div class="body">
+      <p>MiLuv may be offered free of charge or as a one-time paid download through the App Store. Any purchase is processed by Apple under its terms, and refunds are handled by Apple. A price is per Apple ID — if both partners need the app, each downloads it on their own account.</p>
+    </div>
+  </section>
+
+  <section id="termination">
+    <h2 class="sec"><span class="n">8</span>Suspension &amp; termination</h2>
+    <div class="body">
+      <ul class="plain">
+        <li><strong>You</strong> can stop using MiLuv anytime and delete your account from Settings → Delete account, which removes your data and ends your partner's connection.</li>
+        <li><strong>I</strong> may suspend or permanently close an account that breaks these terms, that I'm required to remove by law, or if running MiLuv becomes impractical. Where reasonable and safe to do so, I'll give notice.</li>
+        <li>Sections that by their nature should survive termination (4, 6, 9, 10, 12) continue to apply.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="asis">
+    <h2 class="sec"><span class="n">9</span>No warranty</h2>
+    <div class="body">
+      <p>MiLuv is provided <strong>“as is” and “as available”</strong>, without warranties of any kind, express or implied, including fitness for a particular purpose, accuracy, or uninterrupted or error-free operation. The service depends on third parties (Apple, the hosting and push providers, your network and device) that are outside my control.</p>
+    </div>
+  </section>
+
+  <section id="liability">
+    <h2 class="sec"><span class="n">10</span>Limitation of liability</h2>
+    <div class="body">
+      <p>To the fullest extent permitted by law, I am not liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss arising from your use of — or inability to use — MiLuv, from reliance on the distance or notifications, or from another user's conduct.</p>
+      <p>Where liability cannot be excluded, my total liability to you is limited to the amount you paid for MiLuv in the 12 months before the claim, or ₱500, whichever is greater. Some jurisdictions don't allow these limits, in which case they apply only to the extent permitted.</p>
+    </div>
+  </section>
+
+  <section id="changes">
+    <h2 class="sec"><span class="n">11</span>Changes</h2>
+    <div class="body">
+      <p>I may update the app or these terms. If the terms change materially, I'll update the “last updated” date and let you know in the app before the change takes effect. Continuing to use MiLuv after that means you accept the new terms.</p>
+    </div>
+  </section>
+
+  <section id="law">
+    <h2 class="sec"><span class="n">12</span>Governing law</h2>
+    <div class="body">
+      <p>These terms are governed by the laws of the Republic of the Philippines, without regard to conflict-of-laws rules. Disputes will be handled by the courts of the Philippines, unless a mandatory consumer-protection law in your country of residence gives you the right to bring proceedings there.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="sec"><span class="n">13</span>Contact</h2>
+    <div class="body">
+      <p>Questions about these terms, or to report abuse of MiLuv:</p>
+      <p><a href="mailto:tania.dev.ph@gmail.com">tania.dev.ph@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>MiLuv · Terms of Service · 1 September 2026</footer>
+</div>
