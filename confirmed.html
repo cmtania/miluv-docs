@@ -1,0 +1,74 @@
+<title>MiLuv — Email Confirmed</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F5E6E1;
+    --paper-2: #EACDC2;
+    --ink: #3A2A24;
+    --ink-soft: #6E5A51;
+    --accent: #2C8F76;
+    --card: #FCF4F0;
+    --border: #C68B76;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1B1712; --paper-2: #241C17;
+      --ink: #F1E9E2; --ink-soft: #B7A99C;
+      --accent: #52C2A4; --card: #241C17; --border: #7E5A48;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #1B1712; --paper-2: #241C17;
+    --ink: #F1E9E2; --ink-soft: #B7A99C;
+    --accent: #52C2A4; --card: #241C17; --border: #7E5A48;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: linear-gradient(150deg, var(--paper), var(--paper-2));
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+  .card {
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+    background: var(--card);
+    border: 1.5px dashed var(--border);
+    border-radius: 22px;
+    padding: 40px 28px 34px;
+    box-shadow: 0 20px 50px -24px rgba(58, 42, 36, .3);
+  }
+  .mark {
+    width: 60px; height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: grid; place-items: center;
+  }
+  .mark svg { width: 30px; height: 30px; stroke: #fff; stroke-width: 3.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  h1 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  p { margin: 0; color: var(--ink-soft); line-height: 1.6; font-size: 1rem; }
+  .hint { margin-top: 20px; font-size: 0.85rem; color: var(--ink-soft); opacity: .85; }
+</style>
+<div class="card">
+  <div class="mark">
+    <svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>
+  </div>
+  <h1>Email confirmed</h1>
+  <p>You're all set. Open MiLuv and sign in to connect with your partner.</p>
+  <p class="hint">You can close this tab.</p>
+</div>
