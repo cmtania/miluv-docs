@@ -157,14 +157,14 @@
   <header>
     <p class="kicker">MiLuv</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated 1 September 2026</p>
+    <p class="updated">Last updated 24 September 2026</p>
   </header>
 
   <div class="summary">
     <h2>The short version</h2>
     <ul>
       <li>MiLuv exists to show <strong>you and one partner</strong> how far apart you are.</li>
-      <li>Your partner only ever sees the <strong>distance and a timestamp</strong> — never your location.</li>
+      <li>Your partner sees the <strong>distance, a timestamp</strong>, and any nudges you send — <strong>never your location</strong>.</li>
       <li>Only your <strong>latest position</strong> is stored, and it's overwritten every update.</li>
       <li>No ads, no analytics SDKs, <strong>no tracking</strong> across other apps or sites. Your data is never sold.</li>
       <li>You can turn off location, unlink, or <strong>delete your account and all data</strong> from inside the app at any time.</li>
@@ -192,7 +192,7 @@
     <h2 class="sec"><span class="n">1</span>Who this is from</h2>
     <div class="body">
       <p>MiLuv is an iOS app built and operated by an individual developer (“I”, “me”). This policy explains what the app does with your information. It applies to the MiLuv iOS app and nothing else.</p>
-      <p>If you don't agree with this policy, please don't create an account — and if you already have one, you can delete it from <strong>Settings → Delete account</strong>.</p>
+      <p>If you don't agree with this policy, please don't create an account — and if you already have one, you can delete it from <strong>Settings → Danger Zone → Delete account</strong>.</p>
     </div>
   </section>
 
@@ -208,12 +208,15 @@
       </ul>
 
       <h3>Location</h3>
-      <p>When you grant location permission and either tap “Update my location” or allow background updates, the app sends your device's current <strong>latitude, longitude, and an accuracy value</strong> to the server. Only your single most recent position is stored — each update replaces the previous one. Your coordinates are readable only by you (enforced at the database level) and by the server process that computes distance.</p>
+      <p>When you grant location permission, the app sends your location when you open it, when you tap “Update my location” in Settings, and — if you allow background updates — after you've moved about 200&nbsp;m. Each time, the app sends your device's current <strong>latitude, longitude, and an accuracy value</strong> to the server. Only your single most recent position is stored — each update replaces the previous one. Your coordinates are readable only by you (enforced at the database level) and by the server process that computes distance.</p>
 
       <h3>Notifications</h3>
       <ul class="plain">
-        <li><strong>Push token</strong> — an identifier issued by Apple for your device, stored so the server can send you proximity alerts. It carries no personal information on its own.</li>
+        <li><strong>Push token</strong> — an identifier issued by Apple for your device, stored so the server can send you proximity alerts and nudges. It carries no personal information on its own.</li>
       </ul>
+
+      <h3>Nudges</h3>
+      <p>When you send your partner a nudge, you pick one of a few ready-made messages (such as “I miss you!”). The server sends it to your partner's device as a notification and <strong>does not store the message</strong>. It stores only <strong>the time you last sent a nudge</strong>, so it can limit nudges to one a minute.</p>
 
       <h3>Diagnostic data</h3>
       <p>MiLuv contains <strong>no analytics or advertising software</strong> and does not track you across other apps or websites. Apple and the push-delivery provider (Expo) collect limited technical data — such as crash logs and whether a notification was delivered — as part of running their services. I may later add crash reporting (for example, Sentry) to fix bugs; if I do, it would collect information like device model, OS version, and error details — never your location or the contents of your account.</p>
@@ -224,7 +227,7 @@
     <h2 class="sec"><span class="n">3</span>What your partner can see</h2>
     <div class="body">
       <div class="keyline"><strong>Your partner never sees where you are.</strong> They see the straight-line <strong>distance</strong> between the two of you and <strong>when it was last calculated</strong> — nothing more. Your coordinates are not shared with them, and there is no map, history, or trail.</div>
-      <p>They also see your <strong>display name</strong>. When you unlink, the shared distance is deleted for both of you.</p>
+      <p>They also see your <strong>display name</strong>, and any <strong>nudge</strong> you send them (your name and the message you picked). When you unlink, the shared distance is deleted for both of you.</p>
     </div>
   </section>
 
@@ -236,6 +239,7 @@
         <li>Your <strong>email and password</strong> sign you in.</li>
         <li>Your <strong>latest position</strong> and your partner's are used to calculate the distance between you, which is then shown on the home screen and the widget.</li>
         <li>That distance triggers a <strong>notification</strong> when you cross 1&nbsp;km, 500&nbsp;m, or arrive — sent to your device using your push token.</li>
+        <li>When you send a <strong>nudge</strong>, it's delivered to your partner's device using their push token, and the time you sent it is used to limit nudges to one a minute.</li>
       </ul>
       <p>I do not use your data for advertising, profiling, or any purpose beyond running MiLuv, and I do not sell or rent it to anyone.</p>
     </div>
@@ -249,8 +253,8 @@
         <table>
           <thead><tr><th>Provider</th><th>Role</th><th>What it handles</th></tr></thead>
           <tbody>
-            <tr><td>Supabase</td><td>Database, authentication, serverless functions</td><td>Your account, your latest position, the computed distance, your push token</td></tr>
-            <tr><td>Expo</td><td>Push notification delivery</td><td>Relays notifications and your push token to Apple</td></tr>
+            <tr><td>Supabase</td><td>Database, authentication, serverless functions</td><td>Your account, your latest position, the computed distance, your push token, the time of your last nudge</td></tr>
+            <tr><td>Expo</td><td>Push notification delivery</td><td>Relays notifications (including nudges) and your push token to Apple</td></tr>
             <tr><td>Apple</td><td>App distribution &amp; Apple Push Notification service</td><td>App download, notification delivery, standard device diagnostics</td></tr>
           </tbody>
         </table>
@@ -267,6 +271,7 @@
         <li><strong>Location</strong> — only your most recent position exists at any time; it's overwritten on every update and <strong>deleted immediately</strong> when you unlink from your partner or delete your account.</li>
         <li><strong>Computed distance</strong> — deleted when either of you unlinks or deletes their account.</li>
         <li><strong>Push token</strong> — removed when you sign out on a device or delete your account.</li>
+        <li><strong>Last-nudge time</strong> — a single timestamp, overwritten each time you send a nudge and deleted when you delete your account. Nudge messages are never stored.</li>
       </ul>
     </div>
   </section>
@@ -276,8 +281,8 @@
     <div class="body">
       <ul class="plain">
         <li><strong>Turn off location</strong> — in iOS Settings, at any time. MiLuv still works; it just can't update the distance until you turn it back on.</li>
-        <li><strong>Unlink from your partner</strong> — in the app. This deletes both people's stored locations and the shared distance.</li>
-        <li><strong>Delete your account</strong> — Settings → Delete account. This permanently removes your account and all associated data, and ends your partner's connection.</li>
+        <li><strong>Unlink from your partner</strong> — Settings → Partner → Unlink partner. This deletes both people's stored locations and the shared distance.</li>
+        <li><strong>Delete your account</strong> — Settings → Danger Zone → Delete account. This permanently removes your account and all associated data, and ends your partner's connection.</li>
         <li><strong>Ask what's held about you</strong>, or request deletion if you can't access the app — email me (below) and I'll respond within 30 days.</li>
       </ul>
       <p>Depending on where you live, you may have additional rights under laws such as the GDPR or CCPA — including access, correction, deletion, and the right to object. The controls above cover these; email me if you need anything else.</p>
@@ -320,5 +325,5 @@
     </div>
   </section>
 
-  <footer>MiLuv · Privacy Policy · 1 September 2026</footer>
+  <footer>MiLuv · Privacy Policy · 24 September 2026</footer>
 </div>
