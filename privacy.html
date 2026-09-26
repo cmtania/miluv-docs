@@ -157,14 +157,14 @@
   <header>
     <p class="kicker">MiLuv</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated 24 September 2026</p>
+    <p class="updated">Last updated 27 September 2026</p>
   </header>
 
   <div class="summary">
     <h2>The short version</h2>
     <ul>
       <li>MiLuv exists to show <strong>you and one partner</strong> how far apart you are.</li>
-      <li>Your partner sees the <strong>distance, a timestamp</strong>, and any nudges you send — <strong>never your location</strong>.</li>
+      <li>Your partner sees the <strong>distance, a timestamp</strong>, any nudges you send, and your photo if you add one — <strong>never your location</strong>.</li>
       <li>Only your <strong>latest position</strong> is stored, and it's overwritten every update.</li>
       <li>No ads, no analytics SDKs, <strong>no tracking</strong> across other apps or sites. Your data is never sold.</li>
       <li>You can turn off location, unlink, or <strong>delete your account and all data</strong> from inside the app at any time.</li>
@@ -215,6 +215,9 @@
         <li><strong>Push token</strong> — an identifier issued by Apple for your device, stored so the server can send you proximity alerts and nudges. It carries no personal information on its own.</li>
       </ul>
 
+      <h3>Your photo (optional)</h3>
+      <p>If you add a photo from the Home screen, you take it with the camera or pick it from your library, crop it to a circle, and MiLuv uploads that <strong>one cropped photo</strong>. It is stored privately: only <strong>you and your linked partner</strong> can see it, and it replaces your heart on the Home screen, the widget and share cards. MiLuv only accesses your camera or photo library when you choose to add a photo, and only uploads the photo you pick.</p>
+
       <h3>Nudges</h3>
       <p>When you send your partner a nudge, you pick one of a few ready-made messages (such as “I miss you!”). The server sends it to your partner's device as a notification and <strong>does not store the message</strong>. It stores only <strong>the time you last sent a nudge</strong>, so it can limit nudges to one a minute.</p>
 
@@ -230,7 +233,7 @@
     <h2 class="sec"><span class="n">3</span>What your partner can see</h2>
     <div class="body">
       <div class="keyline"><strong>Your partner never sees where you are.</strong> They see the straight-line <strong>distance</strong> between the two of you and <strong>when it was last calculated</strong> — nothing more. Your coordinates are not shared with them, and there is no map, history, or trail.</div>
-      <p>They also see your <strong>display name</strong>, and any <strong>nudge</strong> you send them (your name and the message you picked). When you unlink, the shared distance is deleted for both of you.</p>
+      <p>They also see your <strong>display name</strong>, and any <strong>nudge</strong> you send them (your name and the message you picked), and <strong>your photo</strong> if you add one. When you unlink, the shared distance is deleted for both of you.</p>
     </div>
   </section>
 
@@ -256,7 +259,7 @@
         <table>
           <thead><tr><th>Provider</th><th>Role</th><th>What it handles</th></tr></thead>
           <tbody>
-            <tr><td>Supabase</td><td>Database, authentication, serverless functions</td><td>Your account, your latest position, the computed distance, your push token, the time of your last nudge</td></tr>
+            <tr><td>Supabase</td><td>Database, authentication, serverless functions</td><td>Your account, your latest position, the computed distance, your push token, the time of your last nudge, your photo if you add one</td></tr>
             <tr><td>Expo</td><td>Push notification delivery</td><td>Relays notifications (including nudges) and your push token to Apple</td></tr>
             <tr><td>Apple</td><td>App distribution &amp; Apple Push Notification service</td><td>App download, notification delivery, standard device diagnostics</td></tr>
           </tbody>
@@ -274,6 +277,7 @@
         <li><strong>Location</strong> — only your most recent position exists at any time; it's overwritten on every update and <strong>deleted immediately</strong> when you unlink from your partner or delete your account.</li>
         <li><strong>Computed distance</strong> — deleted when either of you unlinks or deletes their account.</li>
         <li><strong>Push token</strong> — removed when you sign out on a device or delete your account.</li>
+        <li><strong>Your photo</strong> — kept until you remove it (Home screen → + → Remove Photo) or delete your account. Your partner stops being able to see it as soon as either of you unlinks.</li>
         <li><strong>Last-nudge time</strong> — a single timestamp, overwritten each time you send a nudge and deleted when you delete your account. Nudge messages are never stored.</li>
       </ul>
     </div>
@@ -328,5 +332,5 @@
     </div>
   </section>
 
-  <footer>MiLuv · Privacy Policy · 24 September 2026</footer>
+  <footer>MiLuv · Privacy Policy · 27 September 2026</footer>
 </div>
