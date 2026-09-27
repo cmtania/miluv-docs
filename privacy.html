@@ -157,7 +157,7 @@
   <header>
     <p class="kicker">MiLuv</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated 27 September 2026</p>
+    <p class="updated">Last updated 28 September 2026</p>
   </header>
 
   <div class="summary">
@@ -215,6 +215,15 @@
         <li><strong>Push token</strong> — an identifier issued by Apple for your device, stored so the server can send you proximity alerts and nudges. It carries no personal information on its own.</li>
       </ul>
 
+      <h3>MiLuv Pro purchases</h3>
+      <p>If you buy MiLuv Pro, Apple handles the payment. MiLuv receives Apple's signed record of the purchase and stores <strong>which plan you bought, when it expires (for monthly), and Apple's transaction ID</strong>, so Pro works for you and your linked partner. MiLuv never sees your payment details.</p>
+
+      <h3>Calendar plans (Pro)</h3>
+      <p>Plans you add to the shared Calendar — the type, title, date, repeat setting and optional note — are stored with your link and visible to both of you. Reminders are scheduled on each phone. Plans are deleted when you unlink or delete your account.</p>
+
+      <h3>Time zone and weather (Pro)</h3>
+      <p>MiLuv saves your phone's <strong>time zone</strong> (for example "Asia/Manila") so your partner can see your local time. With Pro, MiLuv also shows your partner the current weather where you are: the server rounds your latest position to about 11&nbsp;km and asks <strong>Apple WeatherKit</strong> for the weather there. Only the temperature and conditions are shown — never your location.</p>
+
       <h3>Your photo (optional)</h3>
       <p>If you add a photo from the Home screen, you take it with the camera or pick it from your library, crop it to a circle, and MiLuv uploads that <strong>one cropped photo</strong>. It is stored privately: only <strong>you and your linked partner</strong> can see it, and it replaces your heart on the Home screen, the widget and share cards. MiLuv only accesses your camera or photo library when you choose to add a photo, and only uploads the photo you pick.</p>
       <p>You can also add a <strong>picture together</strong> &mdash; one shared photo of the two of you, shown when you&rsquo;re together. Either of you can add, change or remove it, and only the two of you can see it.</p>
@@ -265,7 +274,7 @@
           <tbody>
             <tr><td>Supabase</td><td>Database, authentication, serverless functions</td><td>Your account, your latest position, the computed distance, your push token, the time of your last nudge, your photo if you add one</td></tr>
             <tr><td>Expo</td><td>Push notification delivery</td><td>Relays notifications (including nudges) and your push token to Apple</td></tr>
-            <tr><td>Apple</td><td>App distribution &amp; Apple Push Notification service</td><td>App download, notification delivery, standard device diagnostics</td></tr>
+            <tr><td>Apple</td><td>App distribution, in-app purchases, Apple Push Notification service, WeatherKit</td><td>App download and purchases, notification delivery, weather for a rounded (~11&nbsp;km) position, standard device diagnostics</td></tr>
           </tbody>
         </table>
       </div>
@@ -281,6 +290,8 @@
         <li><strong>Location</strong> — only your most recent position exists at any time; it's overwritten on every update and <strong>deleted immediately</strong> when you unlink from your partner or delete your account.</li>
         <li><strong>Computed distance</strong> — deleted when either of you unlinks or deletes their account.</li>
         <li><strong>Push token</strong> — removed when you sign out on a device or delete your account.</li>
+        <li><strong>Purchase records</strong> — kept while your account exists (needed to keep Pro working and for restores); deleted with your account.</li>
+        <li><strong>Calendar plans</strong> — deleted when either of you removes them, unlinks, or deletes their account.</li>
         <li><strong>Picture together</strong> — kept until either of you removes it, unlinks, or deletes their account.</li>
         <li><strong>Your photo</strong> — kept until you remove it (Home screen → + → Remove Photo) or delete your account. Your partner stops being able to see it as soon as either of you unlinks.</li>
         <li><strong>Last-nudge time</strong> — a single timestamp, overwritten each time you send a nudge and deleted when you delete your account. Nudge messages are never stored.</li>
@@ -337,5 +348,5 @@
     </div>
   </section>
 
-  <footer>MiLuv · Privacy Policy · 27 September 2026</footer>
+  <footer>MiLuv · Privacy Policy · 28 September 2026</footer>
 </div>
