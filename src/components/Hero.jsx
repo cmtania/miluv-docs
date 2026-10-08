@@ -5,7 +5,7 @@ import { ArrowDown } from '@phosphor-icons/react';
 import { img, PARTNER, SPRING } from '../config.js';
 import { scrollToId } from '../smooth-scroll.js';
 import { AppWidget } from './AppWidgets.jsx';
-import { Heart } from './Brand.jsx';
+import { Dove3D, Heart } from './Brand.jsx';
 import { AppStoreButton } from './common.jsx';
 import { IPhone } from './Devices.jsx';
 import { ScreenApart, ScreenTogether, ShareCard } from './Screens.jsx';
@@ -16,6 +16,7 @@ const FLOATERS = [
   ['since', 82, 2, 158, 7, 1.0],
   ['nudge', -2, 66, 300, 4, 1.5],
   ['share', 76, 56, 270, -5, 1.15],
+  ['dove', 60, 74, 190, 6, 0.8],
 ];
 
 export function Hero() {
@@ -125,6 +126,7 @@ function FloaterArt({ kind }) {
   if (kind === 'distance') return <AppWidget kind="distance" size="medium" />;
   if (kind === 'since') return <AppWidget kind="since" size="small" />;
   if (kind === 'share') return <ShareCard />;
+  if (kind === 'dove') return <Dove3D pose="hi" width={190} className="floater-dove" alt="" />;
   return (
     <div className="banner banner-hero">
       <img src={img('icon')} alt="" />

@@ -10,7 +10,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-import { DOVE, DOVE_FACE, WORDMARK } from '../src/brand.js';
+import { WORDMARK } from '../src/brand.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const APP = resolve(ROOT, '../MiLuv');
@@ -25,22 +25,18 @@ const webp = (input, name, width, quality = 82) =>
 const SLIDES = ['1-widget', '2-distance', '3-nudge', '4-connect', '5-brand', '6-auto-update'];
 for (const s of SLIDES) await webp(join(APP, `design/app-store/6.9-inch/${s}.png`), `slide-${s}`, 640);
 
-// App icon (app.json "icon"): page favicon, Apple touch icon, and a crisp copy for banners.
-const ICON = join(APP, 'assets/dove-appicon-square.png');
+// The 3D dove (assets/miluv-3d): its app icon for the favicon, touch icon and banners, and
+// every pose as a transparent web image.
+const DOVE3D = join(APP, 'assets/miluv-3d');
+const ICON = join(DOVE3D, 'miluv-3d-excited-appicon.png');
+for (const pose of ['front', 'side', 'hi', 'nudge', 'excited', 'sad']) {
+  await sharp(join(DOVE3D, `miluv-3d-${pose}.png`)).resize({ width: 520 }).webp({ quality: 86, alphaQuality: 90 }).toFile(join(OUT, `dove-${pose}.webp`));
+}
 await sharp(ICON).resize(180).png().toFile(join(ASSETS, 'icon.png'));
 await sharp(ICON).resize(64).png().toFile(join(ASSETS, 'favicon.png'));
 await webp(ICON, 'icon', 160, 90);
 
-// Link preview: blush ground, the dove and the wordmark (all outline paths, no fonts).
-const dove = DOVE.map(
-  (p) =>
-    `<path d="${p.d}" fill="${p.fill}" stroke="${p.stroke}" stroke-width="${p.width}" stroke-linejoin="round" stroke-linecap="round"${p.transform ? ` transform="${p.transform}"` : ''}/>` +
-    (p === DOVE[7]
-      ? `<circle cx="${DOVE_FACE.cheek.cx}" cy="${DOVE_FACE.cheek.cy}" r="${DOVE_FACE.cheek.r}" fill="rgba(233,185,174,0.85)"/>` +
-        `<circle cx="${DOVE_FACE.eye.cx}" cy="${DOVE_FACE.eye.cy}" r="${DOVE_FACE.eye.r}" fill="#3A2A24"/>` +
-        `<circle cx="${DOVE_FACE.shine.cx}" cy="${DOVE_FACE.shine.cy}" r="${DOVE_FACE.shine.r}" fill="#fff"/>`
-      : ''),
-).join('');
+// Link preview: blush ground, the 3D dove waving, and the wordmark (outline paths, no fonts).
 const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <radialGradient id="g" cx="50%" cy="20%" r="95%">
@@ -48,7 +44,6 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#g)"/>
-  <g transform="translate(150 150) scale(2.55)">${dove}</g>
   <g transform="translate(560 165) scale(2.2)">
     <g transform="translate(4 92)">
       <path d="${WORDMARK.letters}" fill="#3A2A24"/>
@@ -58,7 +53,11 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
   </g>
   <text x="598" y="505" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" font-weight="600" fill="#6E5A51">Long-distance, a little closer.</text>
 </svg>`;
-await sharp(Buffer.from(og)).jpeg({ quality: 88 }).toFile(join(OUT, 'og.jpg'));
+const ogDove = await sharp(join(DOVE3D, 'miluv-3d-hi.png')).resize({ height: 470 }).toBuffer();
+await sharp(Buffer.from(og))
+  .composite([{ input: ogDove, left: 90, top: 92 }])
+  .jpeg({ quality: 88 })
+  .toFile(join(OUT, 'og.jpg'));
 
 // The 30-second promo (rendered in ../MiLuv/design/promo), web-sized, plus a poster frame.
 const promo = join(APP, 'design/promo/out/miluv-promo.mp4');

@@ -3,7 +3,7 @@ import { motion, useInView, useReducedMotion } from 'motion/react';
 import { ArrowLeft, ArrowRight, Pause, Play, SpeakerHigh, SpeakerSlash } from '@phosphor-icons/react';
 
 import { img, MARQUEE, NUMBERS, SLIDES, SPRING } from '../config.js';
-import { Dove } from './Brand.jsx';
+import { Dove3D } from './Brand.jsx';
 import { CountUp, Reveal, SectionHead } from './common.jsx';
 
 /** A slow ticker of what MiLuv does, doubled so it loops seamlessly. */
@@ -116,7 +116,7 @@ export function Film() {
               </button>
             </div>
           </div>
-          <Dove size={92} className="film-dove" />
+          <Dove3D pose="excited" width={150} className="film-dove" />
         </Reveal>
       </div>
     </section>

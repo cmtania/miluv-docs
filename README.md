@@ -22,7 +22,7 @@ npm run preview    # serve the built dist/ to check it
   - `Widgets.jsx`: the six Home Screen widgets, free and Pro.
   - `Sections.jsx`: pricing (Free, Pro Monthly, Lifetime), the FAQ accordion, the closing call to action and the footer.
   - `Screens.jsx` and `AppWidgets.jsx`: the app's screens, share card and widgets, **drawn in HTML/CSS after the app's own components** (`components/*.tsx` and `targets/widget/*.swift` in the app repo), sized in iOS points so they stay crisp at any size.
-  - `Brand.jsx` + `src/brand.js`: the dove and the wordmark (the app's own outline geometry), the heart, and illustrated stand-ins for profile photos (the page never shows a real person).
+  - `Brand.jsx` + `src/brand.js`: `Dove3D` (the 3D dove, by pose), the flat dove and the wordmark (the app's own outline geometry; the flat dove stays inside the drawn app screens until the app itself switches), the heart, and illustrated stand-ins for profile photos (the page never shows a real person).
   - `src/config.js`: **all the copy, the App Store URL, the story steps, widgets, plans, prices and FAQs.**
   - `src/landing.css` (the shared layout system) and `src/miluv.css` (MiLuv's pieces and the responsive rules).
 - `public/` is copied into the build as-is, at the same URLs as before:
@@ -39,7 +39,7 @@ Packages: `motion` (animation), `lenis` (smooth scrolling), `@phosphor-icons/rea
 npm run images
 ```
 
-It writes the App Store screenshots (`design/app-store/6.9-inch`), the app icon and favicons (`assets/dove-appicon-square.png`), the link preview `og.jpg`, and, if it has been rendered, the promo video and its poster (`design/promo/out/miluv-promo.mp4`). Commit `public/assets/` afterwards.
+It writes the App Store screenshots (`design/app-store/6.9-inch`), the **3D dove** in every pose (`dove-front`, `-side`, `-hi`, `-nudge`, `-excited`, `-sad`) and its app icon for the favicons and banners (`assets/miluv-3d`), the link preview `og.jpg` (the waving dove + wordmark), and, if it has been rendered, the promo video and its poster (`design/promo/out/miluv-promo.mp4`). Commit `public/assets/` afterwards.
 
 ## Deploy
 
