@@ -1,4 +1,4 @@
-import { CalendarBlank, GlobeHemisphereEast, HandWaving, Hourglass } from '@phosphor-icons/react';
+import { CalendarBlank, CalendarHeart, GlobeHemisphereEast, HandWaving, Hourglass, Island, Sun } from '@phosphor-icons/react';
 
 import { PARTNER } from '../config.js';
 import { Heart, Portrait } from './Brand.jsx';
@@ -91,8 +91,8 @@ function NextDate() {
       </div>
       <div className="w-col w-after">
         <span className="wk">After that</span>
-        <span className="w-item">🏖️ <span><b>Weekend date</b><small>Sat, Oct 25</small></span></span>
-        <span className="w-item">💞 <span><b>Monthsary</b><small>Fri, Nov 29</small></span></span>
+        <span className="w-item"><Island weight="duotone" className="w-ico" /> <span><b>Weekend date</b><small>Sat, Oct 25</small></span></span>
+        <span className="w-item"><CalendarHeart weight="duotone" className="w-ico" /> <span><b>Monthsary</b><small>Fri, Nov 29</small></span></span>
       </div>
     </div>
   );
@@ -103,7 +103,7 @@ function TheirTime() {
     <div className="w-col w-center">
       <Kicker Icon={GlobeHemisphereEast}>{PARTNER}’s time</Kicker>
       <span className="w-clock">5:41<small>PM</small></span>
-      <span className="w-weather">☀️ <b>34°</b> Sunny</span>
+      <span className="w-weather"><Sun weight="fill" className="w-sun" /> <b>34°</b> Sunny</span>
       <span className="w-faint">Dubai · 4h behind</span>
       <span className="w-attr">Apple Weather</span>
     </div>

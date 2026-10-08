@@ -436,3 +436,13 @@ svg.hc-photo.portrait, .hc-couple.portrait { border-radius: 50%; box-shadow: 0 0
 .private-points { list-style: none; margin: auto 0 0; padding: 30px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .private-points li { display: flex; align-items: center; gap: 10px; padding: 14px; border-radius: 16px; background: rgba(255, 255, 255, 0.06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08); font-size: 15px; font-weight: 700; }
 .footer-word { font-family: var(--hand); font-weight: 700; letter-spacing: -0.02em; line-height: 0.85; }
+
+/* Icons in place of emoji */
+.kind { display: inline-flex; align-items: center; gap: 7px; }
+.kind svg { color: var(--amber); flex: none; }
+.clock span { display: inline-flex; align-items: center; gap: 6px; }
+.wx-sun { color: #f2b45a; }
+.wx-moon { color: var(--mint); }
+.w-weather { display: inline-flex; align-items: center; gap: calc(4 * var(--wu)); }
+.w-sun { width: calc(16 * var(--wu)); height: calc(16 * var(--wu)); color: #e9a23b; }
+.w-ico { flex: none; width: calc(16 * var(--wu)); height: calc(16 * var(--wu)); color: var(--amber); }
