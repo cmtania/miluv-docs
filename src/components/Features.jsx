@@ -22,7 +22,7 @@ import {
 } from '@phosphor-icons/react';
 
 import { img, PARTNER, PRIVACY_POINTS, SPRING } from '../config.js';
-import { Heart, Portrait } from './Brand.jsx';
+import { Dove3D, Heart, Portrait } from './Brand.jsx';
 import { Reveal, SectionHead } from './common.jsx';
 import { IPhone } from './Devices.jsx';
 import { ScreenApart, ShareCard } from './Screens.jsx';
@@ -76,6 +76,7 @@ export function Features() {
               ))}
             </div>
             <IPhone screens={[['home', <ScreenApart />, 'The Home screen with the nudge buttons']]} className="peek peek-right" />
+            <Dove3D pose="nudge" width={150} className="nudges-dove" />
           </Reveal>
 
           <Reveal className="card card-blush bento-photos" delay={0.06}>

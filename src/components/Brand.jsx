@@ -1,6 +1,25 @@
 import { DOVE, DOVE_FACE, WORDMARK } from '../brand.js';
 
-/** The MiLuv dove, from the app's own geometry. */
+/**
+ * The 3D MiLuv dove (assets/miluv-3d in the app repo), as a web image. Poses: front, side, hi,
+ * nudge, excited, sad. Images are 520 × 544.
+ */
+export function Dove3D({ pose = 'front', width = 160, className = '', style, alt = '' }) {
+  return (
+    <img
+      className={`dove3d ${className}`}
+      src={`assets/web/dove-${pose}.webp`}
+      alt={alt}
+      width={width}
+      height={Math.round(width * (544 / 520))}
+      style={style}
+      loading="lazy"
+      draggable={false}
+    />
+  );
+}
+
+/** The MiLuv dove, from the app's own geometry (the flat version the app ships today). */
 export function Dove({ size = 128, className = '', style }) {
   return (
     <svg className={className} style={style} width={size} height={size * (134 / 128)} viewBox="0 0 128 134" aria-hidden="true">

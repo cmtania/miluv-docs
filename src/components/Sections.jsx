@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { CaretDown, Check, EnvelopeSimple, Lifebuoy, Sparkle } from '@phosphor-icons/react';
+import { CaretDown, Check, EnvelopeSimple, Sparkle } from '@phosphor-icons/react';
 
 import { FAQS, PLANS, SPRING, SUPPORT_EMAIL, SUPPORT_NAME } from '../config.js';
 import { useLocalPrices } from '../hooks.js';
-import { Dove, Heart, Wordmark } from './Brand.jsx';
+import { Dove3D, Heart, Wordmark } from './Brand.jsx';
 import { AppStoreButton, Reveal, SectionHead } from './common.jsx';
 
 export function Pricing() {
@@ -68,7 +68,7 @@ export function Faq() {
             body={<>Everything else is on the <a href="support.html">Support page</a>.</>}
           />
           <Reveal className="help-card" delay={0.1}>
-            <Lifebuoy size={28} weight="duotone" />
+            <Dove3D pose="sad" width={74} className="help-dove" />
             <b>Still stuck?</b>
             <p>Write to {SUPPORT_NAME}. Most emails get an answer within a day or two.</p>
             <a className="btn btn-outline btn-small" href={`mailto:${SUPPORT_EMAIL}?subject=MiLuv%20support`}>
@@ -134,7 +134,7 @@ export function Cta() {
       </div>
       <div className="wrap cta-copy">
         <Reveal>
-          <Dove size={120} className="cta-dove" />
+          <Dove3D pose="hi" width={180} className="cta-dove" alt="The MiLuv dove, waving" />
           <h2>Close some of the distance <span className="hand">today.</span></h2>
           <p>Download MiLuv, send your person the code, and add the widget. It takes about a minute.</p>
           <div className="cta-actions">
