@@ -1,5 +1,25 @@
 import { motion } from 'motion/react';
-import { Bell, CalendarHeart, Camera, Export, Globe, HandWaving, Heart as HeartIcon, Hourglass, LockKey } from '@phosphor-icons/react';
+import {
+  Bell,
+  CalendarHeart,
+  Camera,
+  Champagne,
+  Diamond,
+  Export,
+  ForkKnife,
+  Globe,
+  HandWaving,
+  Heart as HeartIcon,
+  HeartStraight,
+  Hourglass,
+  Island,
+  LockKey,
+  MoonStars,
+  Sparkle,
+  Sun,
+  SunHorizon,
+  TreeEvergreen,
+} from '@phosphor-icons/react';
 
 import { img, PARTNER, PRIVACY_POINTS, SPRING } from '../config.js';
 import { Heart, Portrait } from './Brand.jsx';
@@ -11,13 +31,14 @@ import { ScreenApart, ShareCard } from './Screens.jsx';
 const NUDGES = [
   ['now', 'I miss you!'],
   ['12m ago', 'I can’t wait to see you!'],
-  ['1h ago', 'I’m saving a hug for you🤗'],
+  ['1h ago', 'I need cuddles!'],
 ];
 
-/** Calendar plan types, as in lib/plans.ts. */
+/** Calendar plan types, as in lib/plans.ts, each with an icon. */
 const PLAN_KINDS = [
-  ['☀️', 'Morning date'], ['🍽️', 'Lunch date'], ['🌙', 'Night date'], ['🏖️', 'Weekend date'],
-  ['💘', 'Valentine’s'], ['🎄', 'Christmas'], ['💍', 'Anniversary'], ['💞', 'Monthsary'], ['🎆', 'New Year'], ['✨', 'Custom'],
+  [SunHorizon, 'Morning date'], [ForkKnife, 'Lunch date'], [MoonStars, 'Night date'], [Island, 'Weekend date'],
+  [HeartStraight, 'Valentine’s'], [TreeEvergreen, 'Christmas'], [Diamond, 'Anniversary'], [CalendarHeart, 'Monthsary'],
+  [Champagne, 'New Year'], [Sparkle, 'Custom'],
 ];
 
 export function Features() {
@@ -113,8 +134,8 @@ export function Features() {
               Morning coffee calls, weekend visits, monthsaries and anniversaries. Both of you get a reminder a day before and an hour before.
             </CardText>
             <div className="kinds" aria-hidden="true">
-              {PLAN_KINDS.map(([emoji, label], i) => (
-                <span key={label} className="kind" style={{ '--i': i }}>{emoji} {label}</span>
+              {PLAN_KINDS.map(([Icon, label], i) => (
+                <span key={label} className="kind" style={{ '--i': i }}><Icon size={18} weight="duotone" /> {label}</span>
               ))}
             </div>
           </Reveal>
@@ -154,12 +175,12 @@ export function Features() {
               <div className="clock">
                 <small>You · Manila</small>
                 <b>9:41 <i>PM</i></b>
-                <span>🌙 27° Clear</span>
+                <span><MoonStars size={20} weight="fill" className="wx-moon" /> 27° Clear</span>
               </div>
               <div className="clock clock-them">
                 <small>{PARTNER} · Dubai</small>
                 <b>5:41 <i>PM</i></b>
-                <span>☀️ 34° Sunny</span>
+                <span><Sun size={20} weight="fill" className="wx-sun" /> 34° Sunny</span>
               </div>
             </div>
           </Reveal>
