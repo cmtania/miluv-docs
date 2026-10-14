@@ -1,0 +1,11 @@
+// Cloudflare Workers Builds deploys this site with `npx wrangler deploy`. Without this file,
+// wrangler "autoconfigures" the project: it adds @cloudflare/vite-plugin to the Vite config,
+// which moves the server build's output and breaks the prerender step (tools/prerender.mjs).
+// With it, wrangler runs our own build and uploads dist/ as static assets.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "miluv-docs",
+  "compatibility_date": "2026-10-12",
+  "build": { "command": "npm run build" },
+  "assets": { "directory": "./dist" }
+}

@@ -43,9 +43,10 @@ It writes the App Store screenshots (`design/app-store/6.9-inch`), the **3D dove
 
 ## Deploy
 
-The official site is **https://miluv.guruchanworks.com/**, served by Cloudflare Pages from this
-repo's `main` branch (build command `npm run build`, output directory `dist`). Cloudflare
-serves clean URLs: `/privacy.html` redirects to `/privacy`, so links and canonical tags use the
+The official site is **https://miluv.guruchanworks.com/**, deployed by Cloudflare (Workers
+Builds) from this repo's `main` branch with `npx wrangler deploy`. `wrangler.jsonc` tells it to run
+`npm run build` and upload `dist/`; keep that file, or wrangler autoconfigures the project and
+breaks the prerender step. Cloudflare serves clean URLs: `/privacy.html` redirects to `/privacy`, so links and canonical tags use the
 clean form.
 
 The old GitHub Pages copy at `https://cmtania.github.io/miluv-docs/` still builds from `main`
