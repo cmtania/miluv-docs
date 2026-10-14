@@ -43,10 +43,16 @@ It writes the App Store screenshots (`design/app-store/6.9-inch`), the **3D dove
 
 ## Deploy
 
-The site used to be published straight from the branch. It now needs a build, so:
+The official site is **https://miluv.guruchanworks.com/**, served by Cloudflare Pages from this
+repo's `main` branch (build command `npm run build`, output directory `dist`). Cloudflare
+serves clean URLs: `/privacy.html` redirects to `/privacy`, so links and canonical tags use the
+clean form.
 
-1. In the repo, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**. Do this **before** pushing this version to `main`: the current site stays live until the first Actions deploy replaces it. (Published from the branch, this version would serve the unbuilt page and 404 the legal pages, which moved into `public/`.)
-2. Push to `main`. The **Deploy to GitHub Pages** workflow builds and publishes `https://cmtania.github.io/miluv-docs/`.
-3. Check that these still open: `privacy.html`, `terms.html`, `support.html`, `confirmed.html`.
+The old GitHub Pages copy at `https://cmtania.github.io/miluv-docs/` still builds from `main`
+(the **Deploy to GitHub Pages** workflow) and must stay up: MiLuv 1.4.0 and older link to its
+`privacy.html` and `terms.html` (`lib/legal.ts`), and Supabase's Site URL points at its
+`confirmed.html`. Every page's canonical tag points at the new domain, so search engines treat
+miluv.guruchanworks.com as the real one.
 
-These URLs are used by App Store Connect, the app (`lib/legal.ts`) and Supabase (Site URL → `confirmed.html`), so they must not move.
+After a deploy, check that these open on both: `privacy`, `terms`, `support`, `confirmed`,
+`sitemap.xml` and `robots.txt`.

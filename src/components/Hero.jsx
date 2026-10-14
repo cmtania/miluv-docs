@@ -58,7 +58,7 @@ export function Hero() {
 
       <div className="wrap hero-copy">
         <motion.span className="pill hero-pill" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={SPRING}>
-          <i /> For iPhone · Free to download
+          <i /> The long-distance relationship app for iPhone · Free
         </motion.span>
         <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ ...SPRING, delay: 0.06 }}>
           Know how far love
