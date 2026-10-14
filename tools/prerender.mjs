@@ -12,7 +12,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const ssrDir = join(root, 'dist-ssr');
-const SITE = 'https://cmtania.github.io/miluv-docs/';
+const SITE = 'https://miluv.guruchanworks.com/';
 
 const server = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href);
 const html = server.render();

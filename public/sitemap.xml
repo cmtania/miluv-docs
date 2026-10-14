@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Submit in Google Search Console and Bing Webmaster Tools: https://cmtania.github.io/miluv-docs/sitemap.xml -->
+<!-- Submit in Google Search Console and Bing Webmaster Tools: https://miluv.guruchanworks.com/sitemap.xml -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cmtania.github.io/miluv-docs/</loc>
+    <loc>https://miluv.guruchanworks.com/</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
   <url>
-    <loc>https://cmtania.github.io/miluv-docs/support.html</loc>
+    <loc>https://miluv.guruchanworks.com/support</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
   <url>
-    <loc>https://cmtania.github.io/miluv-docs/privacy.html</loc>
+    <loc>https://miluv.guruchanworks.com/privacy</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
   <url>
-    <loc>https://cmtania.github.io/miluv-docs/terms.html</loc>
+    <loc>https://miluv.guruchanworks.com/terms</loc>
     <lastmod>2026-10-14</lastmod>
   </url>
 </urlset>
